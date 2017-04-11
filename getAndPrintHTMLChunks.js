@@ -7,6 +7,8 @@ var requestOptions = {
 
 function getAndPrintHTMLChunks () {
   https.get(requestOptions, function(event) {
+
+    event.setEncoding('utf8');
     // event is of type http.incomingMessage
     event.on("data",function (data){
       console.log(data);
